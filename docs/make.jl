@@ -1,7 +1,7 @@
 using Documenter
 
 makedocs(sitename="My Documentation",
-    pages = [
+    pages = Any[
         "Home" => "index.md",
         "Methodology" => "pages/method.md",
         "Data" => "pages/data.md",
