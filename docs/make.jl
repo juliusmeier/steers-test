@@ -11,4 +11,6 @@ makedocs(sitename="My Documentation",
 
 deploydocs(
     repo = "github.com/luetha/steers-test.git",
+    target = "build",
+    push_preview = true,
 )
