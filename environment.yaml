@@ -1,0 +1,14 @@
+name: steers-test
+channels:
+- conda-forge
+dependencies:
+- python>=3.9
+- pip
+
+  # interactive python
+- ipython
+- jupyterlab
+
+  # publishing
+- jupyter-book
+- ghp-import
