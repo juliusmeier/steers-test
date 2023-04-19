@@ -406,17 +406,23 @@ document.write(`
 <section id="mathematical-model-formulation">
 <h2>Mathematical model formulation<a class="headerlink" href="#mathematical-model-formulation" title="Permalink to this headline">#</a></h2>
 <p>The mathematical model formulation is as follows:</p>
-<p>\begin{equation}
-\min_{g_{disp,t}; ~cu_{t}; ~d^{stor}<em>{s, t}; ~l^{stor}</em>{s, t}} \sum_{disp,t} MC_{disp} g_{disp,t}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    \min_{g_{disp,t}; ~cu_{t}; ~d^{stor}_{s, t}; ~l^{stor}_{s, t}} \sum_{disp,t} MC_{disp} g_{disp,t} 
+\end{equation}
+\]</div>
 <p>subject to:</p>
-<p>\begin{aligned}
-d_t             &amp; = \sum_{disp} g_{disp, t} &amp; \forall~&amp; t \in T &amp; \text{energy balance} \
-g_{disp, t}     &amp; \leq G^{max}<em>{disp, t}    &amp; \forall~&amp; disp \in Disp, t \in T &amp; \text{max generation} \
-d^{stor}</em>{s,t}  &amp; \leq G^{max}<em>{s, t}       &amp; \forall~&amp; s \in S, t \in T &amp; \text{max charge} \
-l^{stor}</em>{s, t+1} &amp; = l^{stor}<em>{s, t} + d^{stor}</em>{s,t} - \left(\frac{1}{\eta_s}\right) g_{s,t}
-&amp; \forall~&amp; s \in S, t \in T &amp; \text{storage level}<br />
-\end{aligned}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    d_t             &amp; = \sum_{disp} g_{disp, t} &amp; \forall~&amp; t \in T &amp; \text{energy balance} \\
+    g_{disp, t}     &amp; \leq G^{max}_{disp, t}    &amp; \forall~&amp; disp \in Disp, t \in T &amp; \text{max generation} \\
+    d^{stor}_{s,t}  &amp; \leq G^{max}_{s, t}       &amp; \forall~&amp; s \in S, t \in T &amp; \text{max charge} \\
+    l^{stor}_{s, t+1} &amp; = l^{stor}_{s, t} + d^{stor}_{s,t} - \left(\frac{1}{\eta_s}\right) g_{s,t} 
+    &amp; \forall~&amp; s \in S, t \in T &amp; \text{storage level}  
+\end{aligned}
+\end{split}\]</div>
 <p><strong>Sets</strong></p>
 <ul class="simple">
 <li><p>T</p></li>
