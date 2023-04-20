@@ -369,6 +369,7 @@ document.write(`
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
 <section id="time-series-data">
 <h2>Time series data<a class="headerlink" href="#time-series-data" title="Permalink to this headline">#</a></h2>
+<p>The time series data is based on 2015 values and includes three time series, one each for:</p>
 <ul class="simple">
 <li><p>Demand</p></li>
 <li><p>Wind availability</p></li>
@@ -404,7 +405,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p>pv</p></td>
 <td><p>number</p></td>
-<td><p>Solar pv availability for Denmark on 1st and 2nd of May 2015 based on SARAH dataset retrieved from renewables.ninja</p></td>
+<td><p>Solar PV availability for Denmark on 1st and 2nd of May 2015 based on SARAH dataset retrieved from renewables.ninja</p></td>
 <td><p>MW</p></td>
 <td><p><a class="reference external" href="https://www.renewables.ninja/">https://www.renewables.ninja/</a></p></td>
 </tr>
@@ -417,14 +418,14 @@ document.write(`
 </section>
 <section id="scalar-data">
 <h2>Scalar data<a class="headerlink" href="#scalar-data" title="Permalink to this headline">#</a></h2>
-<p>Scalar data comprises four parameters.</p>
+<p>The scalar data includes four parameters. All data is based on 2015 values.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dispatchable</span></code> : 1 if the technology is dispatchable, 0 otherwise</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vc</span></code>: Variable costs in €/MWh</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">storage_eff</span></code>: Storage efficiency for charging and discharging of storage units</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">installed_cap</span></code>: Installed capacity in MW</p></li>
 </ul>
-<p>The scalar data has the following columns:</p>
+<p>The scalar data has the following field names as columns.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Field name</p></th>
@@ -455,7 +456,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>Data sources</p>
+<p>The data sources of the scalar data are given in the following table.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Key</p></th>
@@ -466,12 +467,12 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>DEA_energy_storage</p></td>
-<td><p>Technology data for energy storage</p></td>
+<td><p>Danish Energy Agency: Technology data for energy storage</p></td>
 <td><p>technologies.csv</p></td>
 <td><p><a class="reference external" href="https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-energy-storage">https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-energy-storage</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>DEA_generators</p></td>
-<td><p>Technology Data for Generation of Electricity and District Heating</p></td>
+<td><p>Danish Energy Agency: Technology Data for Generation of Electricity and District Heating</p></td>
 <td><p>technologies.csv</p></td>
 <td><p><a class="reference external" href="https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-generation-electricity-and">https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-generation-electricity-and</a></p></td>
 </tr>
