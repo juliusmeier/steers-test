@@ -9,9 +9,13 @@
 | Field name | Type (Format) | Description | Unit  | Source |
 | ---        | ---           | ---         | ---   | ---    |
 | hour | string | Hour of the timestep | h | None |
-| demand | number | Total load in Denmark as published on ENTSO-E Transparency Platform  | MW  | Source |
-| wind | number | Onshore wind availability | MW | ---       |
-| pv | number | Solar pv availability | MW | ---       |
+| demand | number | Total load in Denmark on 1st and 2nd of May 2015 as published on ENTSO-E Transparency Platform  | MW  | [ENTSO-E Transparency Platform](https://transparency.entsoe.eu/load-domain/r2/totalLoadR2/show) |
+| wind | number | Onshore wind availability for Denmark on 1st and 2nd of May 2015 based on MERRA-2 dataset (current fleet) retrieved from renewables.ninja | MW | https://www.renewables.ninja/ |
+| pv | number | Solar pv availability for Denmark on 1st and 2nd of May 2015 based on SARAH dataset retrieved from renewables.ninja | MW | https://www.renewables.ninja/ |
+
+:::{note}
+The time series data can be found in `data/timedata.csv`.
+:::
 
 
 ## Scalar data 
@@ -34,11 +38,13 @@ The scalar data has the following columns:
 | source | string | Source of the parameter |
 
 
-For this model, the following scalar data is used:
+Data sources
 
-| Technology    | Parameter | Value | Unit  | Source    |
-| ---           | ---       | ---   | ---   | ---       |
-| Wind | dispatchable | 0 | None | None |
-| Wind | vc |  |  |  |
-| Wind | installed_cap |  |  |  |
-| Solar | dispatchable | 0 |  |  |
+| Key | Full name | File | Source |
+| --- | ---       | ---  | ---    |
+| DEA_energy_storage | Technology data for energy storage | technologies.csv | https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-energy-storage | 
+| DEA_generators | Technology Data for Generation of Electricity and District Heating | technologies.csv | https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-generation-electricity-and |
+
+:::{note}
+The scalar data for all technologies can be found in `data/technologies.csv`
+:::
