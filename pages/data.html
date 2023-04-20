@@ -329,7 +329,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -345,6 +347,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">Time series data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-data">Scalar data</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -356,8 +367,128 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data">
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
-<p>TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT</p>
+<section id="time-series-data">
+<h2>Time series data<a class="headerlink" href="#time-series-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Demand</p></li>
+<li><p>Wind availability</p></li>
+<li><p>Solar PV availability</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field name</p></th>
+<th class="head"><p>Type (Format)</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hour</p></td>
+<td><p>string</p></td>
+<td><p>Hour of the timestep</p></td>
+<td><p>h</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>demand</p></td>
+<td><p>number</p></td>
+<td><p>Total load in Denmark as published on ENTSO-E Transparency Platform</p></td>
+<td><p>MW</p></td>
+<td><p>Source</p></td>
+</tr>
+<tr class="row-even"><td><p>wind</p></td>
+<td><p>number</p></td>
+<td><p>Onshore wind availability</p></td>
+<td><p>MW</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>pv</p></td>
+<td><p>number</p></td>
+<td><p>Solar pv availability</p></td>
+<td><p>MW</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scalar-data">
+<h2>Scalar data<a class="headerlink" href="#scalar-data" title="Permalink to this headline">#</a></h2>
+<p>Scalar data comprises four parameters.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dispatchable</span></code> : 1 if the technology is dispatchable, 0 otherwise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vc</span></code>: Variable costs in €/MWh</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">storage_eff</span></code>: Storage efficiency for charging and discharging of storage units</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">installed_cap</span></code>: Installed capacity in MW</p></li>
+</ul>
+<p>The scalar data has the following columns:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field name</p></th>
+<th class="head"><p>Type (Format)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>technology</p></td>
+<td><p>string</p></td>
+<td><p>Name of technology</p></td>
+</tr>
+<tr class="row-odd"><td><p>parameter</p></td>
+<td><p>string</p></td>
+<td><p>Data parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>number</p></td>
+<td><p>Value of the parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit</p></td>
+<td><p>string</p></td>
+<td><p>Unit of the parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td><p>Source of the parameter</p></td>
+</tr>
+</tbody>
+</table>
+<p>For this model, the following scalar data is used:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Technology</p></th>
+<th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wind</p></td>
+<td><p>dispatchable</p></td>
+<td><p>0</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wind</p></td>
+<td><p>vc</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Wind</p></td>
+<td><p>installed_cap</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Solar</p></td>
+<td><p>dispatchable</p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -418,6 +549,21 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">Time series data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-data">Scalar data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
