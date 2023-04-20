@@ -19,14 +19,24 @@ S = ["PumpedHydro", "Battery"]
 
 DISP = vcat(DISP, S)
 
+tech_data = DataFrames.unstack(tech_data, :technology, :parameter, :value)
+
 ### parameters ###
 demand = Dict(time_series[:,:hour] .=> time_series[:,:demand]./1000)
 
-mc = Dict("p1" =>  10, "p2" => 20)
-g_max = Dict("p1" =>  25, "p2" => 40)
+mc = Dict()
+g_max = Dict()
+eff = Dict()
+stor_max = Dict()
+for tech in tech_data.technology
+    mc[tech] = tech_data[tech_data.technology .== tech, :vc][1]
+    g_max[tech] = tech_data[tech_data.technology .== tech, :installed_cap][1]
+    eff[tech] = tech_data[tech_data.technology .== tech, :storage_eff][1]
+    stor_max[tech] = tech_data[tech_data.technology .== tech, :storage_max][1]
+end
 
-pv_installed = 80
-wind_installed = 100
+pv_installed = g_max["pv"]
+wind_installed = g_max["wind"]
 
 avail_pv = Dict(
     ("pv", row["hour"]) => row["pv"] * pv_installed for row in eachrow(time_series)
@@ -36,18 +46,8 @@ avail_wind = Dict(
 )
 res_feed_in = merge(avail_pv, avail_wind)
 
-# Storage
+# Storage specific helper function
 next_hour(x) = x == T[end] ? T[1] : T[findfirst(isequal(x), T) + 1]
-
-eff = Dict("PumpedHydro" => 0.8, "Battery" => 0.9)
-
-mc["PumpedHydro"] = 1
-mc["Battery"] = 1
-
-g_max["PumpedHydro"] = 8
-g_max["Battery"] = 2
-
-stor_max = Dict("PumpedHydro" => 50, "Battery" => 4)
 
 #****************************************************************************
 # Model
