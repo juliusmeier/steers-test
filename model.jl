@@ -6,34 +6,21 @@ using DataFrames, CSV
 #****************************************************************************
 # Preprocessing
 
-# For more strucute and colordict look in model_old.jl !!!!!!
-
-#data_path = "data"
-#time_series = CSV.read(joinpath(data_path, "timedata.csv"),DataFrame)
-#tech_data = CSV.read(joinpath(data_path, "technologies.csv"),DataFrame)
+data_path = "data"
+time_series = CSV.read(joinpath(data_path, "timedata.csv"),DataFrame)
+tech_data = CSV.read(joinpath(data_path, "technologies.csv"),DataFrame)
 
 ### data preprocessing ###
-
-### parameters ###
-#annuity_factor(n,r) = r * (1+r)^n / (((1+r)^n)-1)
-
-
-
-
-
-data = CSV.read("data/timedata.csv", DataFrame)
-
-#names(data)
-
-# check out https://dataframes.juliadata.org/stable/
-T = data[:,"hour"]
+T = time_series[:,"hour"]
 P = ["p1","p2","pv","wind"]
 DISP = ["p1","p2"]
 NONDISP = ["pv","wind"]
+S = ["PumpedHydro", "Battery"]
 
-demand = Dict(data[:,:hour] .=> data[:,:demand]./1000)
-# another way of doing it is:
-#demand = Dict(row["hour"] => row["demand"]/1000 for row in eachrow(data))
+DISP = vcat(DISP, S)
+
+### parameters ###
+demand = Dict(time_series[:,:hour] .=> time_series[:,:demand]./1000)
 
 mc = Dict("p1" =>  10, "p2" => 20)
 g_max = Dict("p1" =>  25, "p2" => 40)
@@ -42,23 +29,16 @@ pv_installed = 80
 wind_installed = 100
 
 avail_pv = Dict(
-    ("pv", row["hour"]) => row["pv"] * pv_installed for row in eachrow(data)
+    ("pv", row["hour"]) => row["pv"] * pv_installed for row in eachrow(time_series)
 )
-
-#avail_pv = Dict(
-#    ("pv", data[:,:hour]) => data[:,:pv]
-#)
-
 avail_wind = Dict(
-    ("wind", row["hour"]) => row["wind"] * wind_installed for row in eachrow(data)
+    ("wind", row["hour"]) => row["wind"] * wind_installed for row in eachrow(time_series)
 )
-
 res_feed_in = merge(avail_pv, avail_wind)
 
-#### Storage ###
+# Storage
 next_hour(x) = x == T[end] ? T[1] : T[findfirst(isequal(x), T) + 1]
 
-S = ["PumpedHydro", "Battery"]
 eff = Dict("PumpedHydro" => 0.8, "Battery" => 0.9)
 
 mc["PumpedHydro"] = 1
@@ -68,9 +48,6 @@ g_max["PumpedHydro"] = 8
 g_max["Battery"] = 2
 
 stor_max = Dict("PumpedHydro" => 50, "Battery" => 4)
-
-P = vcat(P, S)
-DISP = vcat(DISP, S)
 
 #****************************************************************************
 # Model
@@ -126,6 +103,8 @@ feedin = [res_feed_in[ndisp,t] for ndisp in NONDISP, t in T]
 generation = vcat(feedin, result_G) |> transpose
 
 curtailment = value.(CU).data
+
+# Plot electricity balance
 
 d = [demand[t] for t in T]
 
