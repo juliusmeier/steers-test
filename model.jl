@@ -98,15 +98,15 @@ total_cost = objective_value(m)
 
 result_G = value.(G).data
 
+curtailment = value.(CU).data
+
 feedin = [res_feed_in[ndisp,t] for ndisp in NONDISP, t in T]
 
 generation = vcat(feedin, result_G) |> transpose
 
-curtailment = value.(CU).data
+d = [demand[t] for t in T]
 
 # Plot electricity balance
-
-d = [demand[t] for t in T]
 
 areaplot(
     generation,
@@ -144,4 +144,3 @@ plot!(
     ylabel="Cost per MW",
     linestyle=:dot
 )
-println(price)
