@@ -12,8 +12,8 @@ tech_data = CSV.read(joinpath(data_path, "technologies.csv"),DataFrame)
 
 ### data preprocessing ###
 T = time_series[:,"hour"]
-P = ["p1","p2","pv","wind"]
-DISP = ["p1","p2"]
+P = ["coal","gas","pv","wind"]
+DISP = ["coal","gas"]
 NONDISP = ["pv","wind"]
 S = ["PumpedHydro", "Battery"]
 
@@ -22,14 +22,14 @@ DISP = vcat(DISP, S)
 tech_data = DataFrames.unstack(tech_data, :technology, :parameter, :value)
 
 ### parameters ###
-demand = Dict(time_series[:,:hour] .=> time_series[:,:demand]./1000)
+demand = Dict(time_series[:,:hour] .=> time_series[:,:demand])#./1000)
 
 mc = Dict()
 g_max = Dict()
 eff = Dict()
 stor_max = Dict()
 for tech in tech_data.technology
-    mc[tech] = tech_data[tech_data.technology .== tech, :vc][1]
+    mc[tech] = tech_data[tech_data.technology .== tech, :mc][1]
     g_max[tech] = tech_data[tech_data.technology .== tech, :installed_cap][1]
     eff[tech] = tech_data[tech_data.technology .== tech, :storage_eff][1]
     stor_max[tech] = tech_data[tech_data.technology .== tech, :storage_max][1]
@@ -110,10 +110,10 @@ d = [demand[t] for t in T]
 
 areaplot(
     generation,
-    label=["PV" "Wind" "P1" "P2" "PumpedHydro" "Battery"],
+    label=["PV" "Wind" "Coal" "Gas" "PumpedHydro" "Battery"],
     color=[:yellow :lightblue :brown :grey :blue :purple],
     xlabel="Hours",
-    ylabel="GW",
+    ylabel="MW",
     width=0,
     legend=false
 )
@@ -138,8 +138,10 @@ plot!(
     twinx(),
     price,
     color=:black,
+    ylim=(minimum(price)-10,maximum(price)+10),
     width=2,
     leg=false,
-    ylabel="Cost per GW",
+    ylabel="Cost per MW",
     linestyle=:dot
 )
+println(price)
