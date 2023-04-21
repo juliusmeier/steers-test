@@ -1,23 +1,23 @@
 technology,parameter,value,unit,source
 wind,dispatchable,0,none,none
-wind,vc,2.8,EUR/MWh ,"DEA_generators, p. 225, 2015 value"
-wind,installed_cap,100,MW,own assumption
+wind,mc,0,EUR/MWh ,"Pearson_et_al, Table 1"
+wind,installed_cap,5000,MW,own assumption
 pv,dispatchable,0,none,none
-pv,vc,0,EUR/MWh ,?
-pv,installed_cap,80,MW,own assumption
-p1,dispatchable,1,none,none
-coal,vc,10,EUR/MWh ,?
-p1,installed_cap,25,MW,own assumption
-p2,dispatchable,1,none,none
-ocgt,vc,20,EUR/MWh ,?
-p2,installed_cap,40,MW,own assumption
+pv,mc,0,EUR/MWh ,"Pearson_et_al, Table 1"
+pv,installed_cap,2000,MW,own assumption
+coal,dispatchable,1,none,none
+coal,mc,40.5,EUR/MWh ,"Pearson_et_al, Table 1: average value of Hard coal"
+coal,installed_cap,1300,MW,own assumption
+gas,dispatchable,1,none,none
+gas,mc,87.5,EUR/MWh ,"Pearson_et_al, Table 1: average value of Natural gas"
+gas,installed_cap,800,MW,own assumption
 PumpedHydro,dispatchable,1,none,none
-PumpedHydro,vc,1,EUR/MWh ,?
-PumpedHydro,installed_cap,8,MW,own assumption
+PumpedHydro,mc,0,EUR/MWh ,"Pearson_et_al, Table 1"
+PumpedHydro,installed_cap,200,MW,own assumption
 PumpedHydro,storage_eff,0.8,1,"DEA_energy_storage, p. 123, 2015 value"
-PumpedHydro,storage_max,50,MWh ,own assumption
+PumpedHydro,storage_max,400,MWh ,own assumption
 Battery,dispatchable,1,none,none
-Battery,vc,2.1,EUR/MWh ,"DEA_energy_storage p. 181, 2015 value"
-Battery,installed_cap,2,MW,own assumption
+Battery,mc,2.1,EUR/MWh ,"DEA_energy_storage p. 181, 2015 value"
+Battery,installed_cap,100,MW,own assumption
 Battery,storage_eff,0.91,1,"DEA_energy_storage p. 181, 2015 value: Round trip efficiency (%) AC"
-Battery,storage_max,4,MWh ,own assumption
+Battery,storage_max,200,MWh ,own assumption
