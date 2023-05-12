@@ -16,7 +16,7 @@ The time series data is based on 2015 values and includes three time series, one
 | pv | number | Solar PV availability for Denmark on 16th and 17th of May 2015 based on SARAH dataset retrieved from renewables.ninja | MW | https://www.renewables.ninja/ |
 
 :::{note}
-The time series data can be found in `data/timedata.csv`.
+The time series data can be found in `data/timedata.csv`. Click [here](https://github.com/juliusmeier/steers-test/blob/main/data/timedata.csv) to be directed to the file.
 :::
 
 
@@ -48,5 +48,5 @@ The data sources of the scalar data are given in the following table.
 | Pearson_et_al | Pearson et al.: The value of TSO-DSO coordination in re-dispatch with flexible decentralized energy sources: Insights for Germany in 2030 | data/technologies.csv | https://doi.org/10.1016/j.apenergy.2022.119905 |
 
 :::{note}
-The scalar data for all technologies can be found in `data/technologies.csv`
+The scalar data for all technologies can be found in `data/technologies.csv`. Click [here](https://github.com/juliusmeier/steers-test/blob/main/data/technologies.csv) to be directed to the file.
 :::

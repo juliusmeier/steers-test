@@ -376,7 +376,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="model">
 <h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">#</a></h1>
-<p>intro text: dispatch model</p>
+<p>A minimal model that optimises the dispatch is presented here.</p>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -389,8 +389,7 @@ document.write(`
 </section>
 <section id="basic-structure">
 <h2>Basic Structure<a class="headerlink" href="#basic-structure" title="Permalink to this headline">#</a></h2>
-<p>table with component and description</p>
-<p>might not be necessary</p>
+<p>The model includes generators and storage as well as a demand.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Component</p></th>
@@ -398,8 +397,11 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>bla</p></td>
-<td><p>bla</p></td>
+<tr class="row-even"><td><p>Generators</p></td>
+<td><p>Dispatchable: 1 coal power plant, 1 gas power plant <br /> Non-dispatchable: 1 solar pv, 1 wind</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage units</p></td>
+<td><p>1 Pumped Hydro, 1 Battery</p></td>
 </tr>
 </tbody>
 </table>
@@ -427,9 +429,9 @@ document.write(`
 <p><strong>Sets</strong></p>
 <ul class="simple">
 <li><p>Time steps T: <span class="math notranslate nohighlight">\(t = {1, ..., 48}\)</span></p></li>
-<li><p>Dispatchable generators (including storage) Disp</p></li>
-<li><p>NonDisp</p></li>
-<li><p>S</p></li>
+<li><p>Dispatchable generators (including storage units) Disp: <span class="math notranslate nohighlight">\(disp = {\text{coal, gas, pumped hydro, battery}}\)</span></p></li>
+<li><p>Non-dispatchable generators NonDisp : <span class="math notranslate nohighlight">\(ndisp = {\text{pv, wind}}\)</span></p></li>
+<li><p>Storage units S : <span class="math notranslate nohighlight">\(s = {\text{pumped hydro, battery}}\)</span></p></li>
 </ul>
 <p><strong>Decision variables:</strong></p>
 <ul class="simple">
@@ -448,11 +450,10 @@ document.write(`
 </section>
 <section id="julia-implementation">
 <h2>Julia implementation<a class="headerlink" href="#julia-implementation" title="Permalink to this headline">#</a></h2>
-<p>For implementing the mathematical model into julia, JuMP is used. It is a domain-specific modeling language for mathematical optimization embedded in Julia.</p>
+<p>For implementing the mathematical model into julia, JuMP is used. It is a modeling language for mathematical optimization embedded in Julia.</p>
 <p>Before the optimisation problem can be formulated, the necessary input data needs to be loaded.</p>
 <section id="preprocessing">
 <h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">#</a></h3>
-<p>describe data read in</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">JuMP</span>
@@ -489,7 +490,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Dict</span><span class="p">(</span><span class="n">time_series</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="ss">:hour</span><span class="p">]</span><span class="w"> </span><span class="o">.=&gt;</span><span class="w"> </span><span class="n">time_series</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="ss">:demand</span><span class="p">])</span><span class="c">#./1000)</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Dict</span><span class="p">(</span><span class="n">time_series</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="ss">:hour</span><span class="p">]</span><span class="w"> </span><span class="o">.=&gt;</span><span class="w"> </span><span class="n">time_series</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="ss">:demand</span><span class="p">])</span>
 
 <span class="n">mc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Dict</span><span class="p">()</span>
 <span class="n">g_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Dict</span><span class="p">()</span>
@@ -526,8 +527,7 @@ document.write(`
 </section>
 <section id="modell-formulation-with-jump">
 <h3>Modell formulation with <code class="docutils literal notranslate"><span class="pre">JuMP</span></code><a class="headerlink" href="#modell-formulation-with-jump" title="Permalink to this headline">#</a></h3>
-<p>explanin jump part</p>
-<p>and highlight solving command</p>
+<p>The JuMP package is used to implement the mathematical model. First, a new JuMp model is initiated and a solver is chosen. Here, the open-source solver Clp is applied. Variables are created and added to the model. Subsequently, the objective function and the constraints are implemented. With the command <code class="docutils literal notranslate"><span class="pre">optimize!(m)</span></code> the model is solved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Model</span><span class="p">(</span><span class="n">Clp</span><span class="o">.</span><span class="n">Optimizer</span><span class="p">)</span>
@@ -592,7 +592,7 @@ document.write(`
 </section>
 <section id="results-and-plotting">
 <h3>Results and plotting<a class="headerlink" href="#results-and-plotting" title="Permalink to this headline">#</a></h3>
-<p>explain</p>
+<p>In the postprocessing part, the results of the model are extracted and plotted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">total_cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">objective_value</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>

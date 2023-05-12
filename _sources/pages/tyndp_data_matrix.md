@@ -1,9 +1,9 @@
 # TYNDP 2022 data
 
-The TYNDP 2022 data matrix tries to gather all data that is mentioned in the Scenario Building Guidelines of the TYNDP 2022.
+The TYNDP 2022 data matrix aims to comprehensively compile all the data specified in the Scenario Building Guidelines of the TYNDP 2022.
 
 :::{note}
-The data matrix can be found in `data/tyndp2022_data_matrix.xlsx`
+The data matrix can be found in `data/tyndp2022_data_matrix.xlsx`. Click [here](https://github.com/juliusmeier/steers-test/blob/main/data/tyndp2022_data_matrix.xlsx) to be directed to the file.
 :::
 
 ## Data matrix description
