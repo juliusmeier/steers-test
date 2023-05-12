@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Data &#8212; STEERS test</title>
+    <title>TYNDP 2022 data &#8212; STEERS test</title>
   
   
   
@@ -60,11 +60,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/data';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/tyndp_data_matrix';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Method" href="method.html" />
-    <link rel="prev" title="TYNDP 2022 data" href="tyndp_data_matrix.html" />
+    <link rel="next" title="Data" href="data.html" />
+    <link rel="prev" title="STEERS Project" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -156,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tyndp_data_matrix.html">TYNDP 2022 data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TYNDP 2022 data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="method.html">Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 </ul>
@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpages/data.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpages/tyndp_data_matrix.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/pages/data.md" target="_blank"
+      <li><a href="../_sources/pages/tyndp_data_matrix.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data</h1>
+    <h1>TYNDP 2022 data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,8 +353,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">Time series data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-data">Scalar data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-matrix-description">Data matrix description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sheets">Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-documentation">Field documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomenclature">Nomenclature</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -366,123 +370,253 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data">
-<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
-<section id="time-series-data">
-<h2>Time series data<a class="headerlink" href="#time-series-data" title="Permalink to this headline">#</a></h2>
-<p>The time series data is based on 2015 values and includes three time series, one each for:</p>
-<ul class="simple">
-<li><p>Demand</p></li>
-<li><p>Wind availability</p></li>
-<li><p>Solar PV availability</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="tyndp-2022-data">
+<h1>TYNDP 2022 data<a class="headerlink" href="#tyndp-2022-data" title="Permalink to this headline">#</a></h1>
+<p>The TYNDP 2022 data matrix tries to gather all data that is mentioned in the Scenario Building Guidelines of the TYNDP 2022.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data matrix can be found in <code class="docutils literal notranslate"><span class="pre">data/tyndp2022_data_matrix.xlsx</span></code></p>
+</div>
+<section id="data-matrix-description">
+<h2>Data matrix description<a class="headerlink" href="#data-matrix-description" title="Permalink to this headline">#</a></h2>
+<p>The following description of the data matrix can also be found on the cover page of the data matrix file.</p>
+<section id="sheets">
+<h3>Sheets<a class="headerlink" href="#sheets" title="Permalink to this headline">#</a></h3>
+<p>The excel file contains multiple sheets. The following table provides a description of the different sheets.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Field name</p></th>
-<th class="head"><p>Type (Format)</p></th>
+<tr class="row-odd"><th class="head"><p>Sheet</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Unit</p></th>
-<th class="head"><p>Source</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>hour</p></td>
-<td><p>string</p></td>
-<td><p>Hour of the timestep</p></td>
-<td><p>h</p></td>
-<td><p>None</p></td>
+<tr class="row-even"><td><p>External sources</p></td>
+<td><p>Lists all external sources stated in SBG</p></td>
 </tr>
-<tr class="row-odd"><td><p>demand</p></td>
-<td><p>number</p></td>
-<td><p>Total load in Denmark on 16th and 17th of May 2015 as published on ENTSO-E Transparency Platform</p></td>
-<td><p>MW</p></td>
-<td><p><a class="reference external" href="https://transparency.entsoe.eu/load-domain/r2/totalLoadR2/show">ENTSO-E Transparency Platform</a></p></td>
+<tr class="row-odd"><td><p>TYNDP Data files</p></td>
+<td><p>Lists all for download available Data files of the TYNDP 2022</p></td>
 </tr>
-<tr class="row-even"><td><p>wind</p></td>
-<td><p>number</p></td>
-<td><p>Onshore wind availability for Denmark on 16th and 17th of May 2015 based on MERRA-2 dataset (current fleet) retrieved from renewables.ninja</p></td>
-<td><p>MW</p></td>
-<td><p><a class="reference external" href="https://www.renewables.ninja/">https://www.renewables.ninja/</a></p></td>
+<tr class="row-even"><td><p>National Trends</p></td>
+<td><p>Includes data that is mentioned as relevant for the scenario National Trends in the SBG</p></td>
 </tr>
-<tr class="row-odd"><td><p>pv</p></td>
-<td><p>number</p></td>
-<td><p>Solar PV availability for Denmark on 16th and 17th of May 2015 based on SARAH dataset retrieved from renewables.ninja</p></td>
-<td><p>MW</p></td>
-<td><p><a class="reference external" href="https://www.renewables.ninja/">https://www.renewables.ninja/</a></p></td>
+<tr class="row-odd"><td><p>Cop21</p></td>
+<td><p>Includes data that is mentioned as relevant for the scenario Cop21 scenarios in the SBG</p></td>
+</tr>
+<tr class="row-even"><td><p>Prices and Costs</p></td>
+<td><p>Includes prices and costs data for all scenarios that are mentioned in SBG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Trapunta</p></td>
+<td><p>Describes the mentioned data in SBG of the Trapunta Tool</p></td>
+</tr>
+<tr class="row-even"><td><p>Ambition Tool</p></td>
+<td><p>Describes the mentioned data in SBG of the Ambition Tool</p></td>
+</tr>
+<tr class="row-odd"><td><p>STEERS addition</p></td>
+<td><p>List of all additional data needed for the STEERS methodology</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The time series data can be found in <code class="docutils literal notranslate"><span class="pre">data/timedata.csv</span></code>.</p>
-</div>
 </section>
-<section id="scalar-data">
-<h2>Scalar data<a class="headerlink" href="#scalar-data" title="Permalink to this headline">#</a></h2>
-<p>The scalar data includes four parameters. All data is based on 2015 values.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dispatchable</span></code> : 1 if the technology is dispatchable, 0 otherwise</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">vc</span></code>: Variable costs in €/MWh</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">storage_eff</span></code>: Storage efficiency for charging and discharging of storage units</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">installed_cap</span></code>: Installed capacity in MW</p></li>
-</ul>
-<p>The scalar data has the following field names as columns.</p>
+<section id="field-documentation">
+<h3>Field documentation<a class="headerlink" href="#field-documentation" title="Permalink to this headline">#</a></h3>
+<p>A description of the structure of the sheets describing the data is provided in the following. For each column, all possible field entries are listed.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Field name</p></th>
-<th class="head"><p>Type (Format)</p></th>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Options</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>technology</p></td>
-<td><p>string</p></td>
-<td><p>Name of technology</p></td>
+<tr class="row-even"><td><p>Key</p></td>
+<td><p>individual</p></td>
+<td><p>unique identifier for the data point: individual because there are no option categories and every option is individual; empty cells do not have a key because it is not needed to be referenced anywhere</p></td>
 </tr>
-<tr class="row-odd"><td><p>parameter</p></td>
-<td><p>string</p></td>
-<td><p>Data parameter</p></td>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>individual</p></td>
+<td><p>describes data point: individual name</p></td>
 </tr>
-<tr class="row-even"><td><p>value</p></td>
-<td><p>number</p></td>
-<td><p>Value of the parameter</p></td>
+<tr class="row-even"><td><p>Unit</p></td>
+<td><p>individual</p></td>
+<td><p>unit of the datapoint: all individual units are not listed here</p></td>
 </tr>
-<tr class="row-odd"><td><p>unit</p></td>
-<td><p>string</p></td>
-<td><p>Unit of the parameter</p></td>
+<tr class="row-odd"><td><p></p></td>
+<td><p>collection</p></td>
+<td><p>datapoint has multiple units</p></td>
 </tr>
-<tr class="row-even"><td><p>source</p></td>
-<td><p>string</p></td>
-<td><p>Source of the parameter</p></td>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>open</p></td>
+<td><p>data is open</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>closed</p></td>
+<td><p>data could not be found; unclear if it means that the same data as in TYNDP 2020 is used</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>individual numerical value</p></td>
+<td><p>individual numerical value</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>unlear</p></td>
+<td><p>see in comment for reason why unclear</p></td>
+</tr>
+<tr class="row-even"><td><p>Scenario</p></td>
+<td><p>All</p></td>
+<td><p>applicable to all scenarios</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>NT</p></td>
+<td><p>applicable to only this scenario</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Cop21</p></td>
+<td><p>applicable to only this scenario</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>DE</p></td>
+<td><p>applicable to only this scenario</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>GA</p></td>
+<td><p>applicable to only this scenario</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>collection</p></td>
+<td><p>multiple values that are collected under this datapoint, e.g. for several years</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>time series</p></td>
+<td><p>data is a time series</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>float</p></td>
+<td><p>data is a single numerical value</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Format</p></td>
+<td><p>xlsx</p></td>
+<td><p>Excel file</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Table</p></td>
+<td><p>Listed in Table in SBG</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Text</p></td>
+<td><p>Mentioned in Text of SBG</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Figure</p></td>
+<td><p>Presented in a Figure in SBG</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>png</p></td>
+<td><p>.png file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tool</p></td>
+<td><p>Dispatch model</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Supply Tool</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Dispatch (and Expansion) model</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Trapunta</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Ambition Tool</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Electricity profile</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>PECD</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>P2G capacity</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Postprocessing</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>“name of a data point”</p></td>
+<td><p>related to a different data point by being used as input or being an output</p></td>
+</tr>
+<tr class="row-odd"><td><p>I/O</p></td>
+<td><p>Input</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Output</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Output/Input</p></td>
+<td><p>This data is output of a tool and used as input for a different one.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reference (Report)</p></td>
+<td><p>page number</p></td>
+<td><p>Reference in SBG report</p></td>
+</tr>
+<tr class="row-odd"><td><p>Source</p></td>
+<td><p>Key</p></td>
+<td><p>Keys show to a different row in which the primary source is listed</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>URL</p></td>
+<td><p>URLs link to online source of the data</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>ENTSO analysis</p></td>
+<td><p>based on calculation by TYNDP team</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>TSO Data collection</p></td>
+<td><p>based on TSO Data Collection</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Assumption</p></td>
+<td><p>Assumption made by TYNDP team</p></td>
+</tr>
+<tr class="row-even"><td><p>Comment</p></td>
+<td><p>text</p></td>
+<td><p>Comment or further informationo on that data point</p></td>
 </tr>
 </tbody>
 </table>
-<p>The data sources of the scalar data are given in the following table.</p>
+</section>
+<section id="nomenclature">
+<h3>Nomenclature<a class="headerlink" href="#nomenclature" title="Permalink to this headline">#</a></h3>
+<p>The following abbreviations are used in the data matrix:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Key</p></th>
-<th class="head"><p>Full name</p></th>
-<th class="head"><p>File</p></th>
-<th class="head"><p>Source</p></th>
+<tr class="row-odd"><th class="head"><p>Sheet</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>DEA_energy_storage</p></td>
-<td><p>Danish Energy Agency: Technology data for energy storage</p></td>
-<td><p>data/technologies.csv</p></td>
-<td><p><a class="reference external" href="https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-energy-storage">https://ens.dk/en/our-services/projections-and-models/technology-data/technology-data-energy-storage</a></p></td>
+<tr class="row-even"><td><p>na</p></td>
+<td><p>not applicable</p></td>
 </tr>
-<tr class="row-odd"><td><p>Pearson_et_al</p></td>
-<td><p>Pearson et al.: The value of TSO-DSO coordination in re-dispatch with flexible decentralized energy sources: Insights for Germany in 2030</p></td>
-<td><p>data/technologies.csv</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.1016/j.apenergy.2022.119905">https://doi.org/10.1016/j.apenergy.2022.119905</a></p></td>
+<tr class="row-odd"><td><p>SBG</p></td>
+<td><p>Scenario Building Guidelines</p></td>
+</tr>
+<tr class="row-even"><td><p>None</p></td>
+<td><p>an empty field, there is no information necessary/available</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The scalar data for all technologies can be found in <code class="docutils literal notranslate"><span class="pre">data/technologies.csv</span></code></p>
-</div>
+</section>
 </section>
 </section>
 
@@ -518,20 +652,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tyndp_data_matrix.html"
+       href="../intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TYNDP 2022 data</p>
+        <p class="prev-next-title">STEERS Project</p>
       </div>
     </a>
     <a class="right-next"
-       href="method.html"
+       href="data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Method</p>
+        <p class="prev-next-title">Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -553,8 +687,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">Time series data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-data">Scalar data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-matrix-description">Data matrix description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sheets">Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-documentation">Field documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomenclature">Nomenclature</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
