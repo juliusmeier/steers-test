@@ -12,4 +12,5 @@ chapters:
 - file: pages/illustrative_model
   sections:
   - file: pages/model
-- file: pages/literature
+  - file: pages/data
+- file: pages/references
