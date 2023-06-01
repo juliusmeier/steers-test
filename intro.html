@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TYNDP 2022 data" href="pages/tyndp_data_matrix.html" />
+    <link rel="next" title="Deliverables" href="pages/deliverables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -155,10 +155,17 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pages/tyndp_data_matrix.html">TYNDP 2022 data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/data.html">Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/method.html">Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/model.html">Model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pages/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/method.html">Methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/poc.html">Proof of Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tyndp_data_matrix.html">TYNDP 2022 data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pages/illustrative_model.html">Illustrative model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/model.html">Mathematical Model and Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/literature.html">References</a></li>
 </ul>
 
     </div>
@@ -352,9 +359,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-page">This page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
             </nav>
         </div>
@@ -368,14 +374,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="steers-project">
 <h1>STEERS Project<a class="headerlink" href="#steers-project" title="Permalink to this headline">#</a></h1>
-<p><em>Introduction page = Landing page</em></p>
-<p><em>A documentation for STEERS</em></p>
-<p>TEXT TEXT TEXT</p>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h2>
-<p>This documentation contains:</p>
+<p>In the project “A Methodology for Implementing Smart and Efficient Energy System Integration” (STEERS) CSEI assesses the methodology of the ten-year network development planning (TYNDP) against the state of knowledge on sector integration and system modeling. The work is funded by a research grant from the European Commission. The TYNDP process is evolving continuously in order to support the European decarbonization targets and to align with the latest changes in European legislation. The project aims to contribute to a coherent TYNDP methodology that supports delivering a smart and efficient integrated energy system, incorporates energy system integration, and energy efficiency throughout. In our own methodology, we propose incremental and pragmatic changes to achieve this.</p>
+<section id="this-page">
+<h2>This page<a class="headerlink" href="#this-page" title="Permalink to this headline">#</a></h2>
+<p>This webpage showcases basics of open modelling for energy systems using a stylised example.
+It contains:</p>
 <ul class="simple">
 <li><p>TYNDP 2022 data matrix description</p></li>
+<li><p>A short description of the STEERS methodology</p></li>
+<li><p>The Proof of Concept for the STEERS methodology</p></li>
 <li><p>A minimal dispatch model with documentation</p></li>
 <li><p>Data used in the minimal dispatch model with documentation</p></li>
 </ul>
@@ -384,9 +391,6 @@ document.write(`
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>If you want to execute the provided model or amend the online documentation, you need to install the steers-test repository on your local machine.
 Please refer to the GitHub repository <a class="reference external" href="https://github.com/juliusmeier/steers-test">here</a> for instructions.</p>
-</section>
-<section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -424,11 +428,11 @@ Please refer to the GitHub repository <a class="reference external" href="https:
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="pages/tyndp_data_matrix.html"
+       href="pages/deliverables.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TYNDP 2022 data</p>
+        <p class="prev-next-title">Deliverables</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,9 +454,8 @@ Please refer to the GitHub repository <a class="reference external" href="https:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-page">This page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
   </nav></div>
 
