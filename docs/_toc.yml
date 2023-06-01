@@ -4,7 +4,30 @@
 format: jb-book
 root: intro
 chapters:
-- file: pages/tyndp_data_matrix
-- file: pages/data
-- file: pages/method
-- file: pages/model
+- file: pages/deliverables
+  sections:
+  - file: pages/method
+  - file: pages/poc
+  - file: pages/tyndp_data_matrix
+chapters:
+-file: pages/illustrative_model
+  sections:
+  - file: pages/model
+  - file: pages/data
+
+
+#- file: pages/tyndp_data_matrix
+#- file: pages/data
+#- file: pages/method
+#- file: pages/model
+
+#parts:
+#- caption: Deliverables
+#  chapters:
+#  - file: pages/method
+#  - file: pages/poc
+#  - file: pages/tyndp_data_matrix
+#- caption: Illustrative Model
+#  chapters:
+#  - file: pages/model
+#  - file: pages/data
