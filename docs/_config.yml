@@ -21,6 +21,10 @@ latex:
   latex_documents:
     targetname: book.tex
 
+#sphinx:
+#  config:
+#    bibtex_reference_style: author_year
+
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib

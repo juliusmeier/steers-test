@@ -1,4 +1,4 @@
-## Proof of Concept
+# Proof of Concept
 
 The STEERS methodology presented in D2-3 Draft Methodology undergoes a Proof of concept (POC). In this context, POC is defined as:
 “A proof of concept (POC) is a demonstration, the purpose of which is to verify that certain concepts or theories have the potential for real-world application. […] The POC provides evidence that demonstrates that a business model, product, service, system, or idea is feasible and will function as intended.“ {cite}`Harrington_2016` 
