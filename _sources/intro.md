@@ -13,6 +13,8 @@ It contains:
 - A minimal dispatch model with documentation
 - Data used in the minimal dispatch model with documentation
 
+See the sections of this page to the left.
+
 
 ## Installation 
 
