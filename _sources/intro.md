@@ -13,8 +13,7 @@ jupytext:
 In the project “A Methodology for Implementing Smart and Efficient Energy System Integration” (STEERS) CSEI assesses the methodology of the ten-year network development planning (TYNDP) against the state of knowledge on sector integration and system modeling. The work is funded by a research grant from the European Commission. The TYNDP process is evolving continuously in order to support the European decarbonization targets and to align with the latest changes in European legislation. The project aims to contribute to a coherent TYNDP methodology that supports delivering a smart and efficient integrated energy system, incorporates energy system integration, and energy efficiency throughout. In our own methodology, we propose incremental and pragmatic changes to achieve this.
 
 ```{image} EN_FundedbytheEU_RGB_POS.png
-:width: 40%
-:height: 40%
+:width: 300px 
 :align: center
 ```
 
